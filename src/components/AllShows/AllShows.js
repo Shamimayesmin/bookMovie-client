@@ -7,7 +7,7 @@ const AllShows = () => {
 	const [shows, setShows] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/shows")
+		fetch(" https://movieticket-server.vercel.app/shows")
 			.then((res) => res.json())
 			.then((data) => {
 				// console.log(data);
@@ -23,14 +23,25 @@ const AllShows = () => {
 			</div>
 		);
 	}
-	
+
 	return (
-		<Container style={{ marginBottom: '20px',marginTop:"30px", padding: "30px" }}>
+		<Container
+			style={{ marginBottom: "20px", marginTop: "30px", padding: "30px" }}
+		>
 			<Row>
 				{shows &&
 					shows?.map((show) => (
-						<Col xs={12} md={6} lg={4} style={{ marginBottom: '20px', paddingBottom: "20px" ,columnGap:'0px'}}>
-							<SingleShow  key={show._id} show={show} />
+						<Col
+							xs={12}
+							md={6}
+							lg={4}
+							style={{
+								marginBottom: "20px",
+								paddingBottom: "20px",
+								columnGap: "0px",
+							}}
+						>
+							<SingleShow key={show._id} show={show} />
 						</Col>
 					))}
 			</Row>
