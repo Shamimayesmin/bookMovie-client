@@ -14,8 +14,16 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-				path: "/movie-details/:id",
-				element: <DetailsCard/>
+				path: "/details/:id",
+				element: <DetailsCard/>,
+                loader: ({ params }) =>{
+                    console.log(params.id);
+                    return fetch(`http://localhost:5000/shows/${params.id}`);
+                }
+                // return fetch(`http://localhost:5000/shows/${params.id}`);
+				// return 	fetch(
+				// 		`http://localhost:5000/shows/${params.id}`
+				// 	),
 			},
         ]
     }

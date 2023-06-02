@@ -2,10 +2,11 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
-import { Link } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 const SingleShow = ({ show }) => {
-	const {name,image,_id,genres,ended} = show.show
-	console.log(show.show);
+    const { _id } = show;
+	const {name,image,genres,ended,summary} = show.show
+	// console.log(show.show);
 	return (
 		<>
 			<Card style={{ width: "18rem",}}>
@@ -13,8 +14,8 @@ const SingleShow = ({ show }) => {
 				<Card.Body>
 					<Card.Title>{name}</Card.Title>
 					<Card.Text>
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
+						{summary?.slice(0, 100).replace(/<[^>]+>/g, '')}
+                        <span style={{ fontSize: "12px", color: "blue"}}>....more</span>
 					</Card.Text>
 					<div>
 						<h6>
@@ -22,9 +23,9 @@ const SingleShow = ({ show }) => {
                         Ended:<Badge bg="secondary">{ended}</Badge>
 						</h6>
 					</div>
-                    {/* to={(`/tour-details/${_id}`)} */}
-					<Link to={(`/movie-details/${_id}`)}>
-                    <Button variant="primary">Go somewhere</Button>
+                  
+					<Link to={(`/details/${_id}`)}>
+                    <Button variant="primary">Details</Button>
                     </Link>
 				</Card.Body>
 			</Card>
