@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import SingleShow from "../SingleShow/SingleShow";
-import { Row, Col, Container } from "react-bootstrap";
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import DetailsCard from '../DetailsCard/DetailsCard';
 
-const AllShows = () => {
-	const [loading, setLoading] = useState(true);
+const Details = () => {
+    const [loading, setLoading] = useState(true);
 	const [shows, setShows] = useState([]);
 
 	useEffect(() => {
@@ -24,18 +24,18 @@ const AllShows = () => {
 		);
 	}
 	
-	return (
-		<Container style={{ marginBottom: '20px',marginTop:"30px", padding: "30px" }}>
+    return (
+        <Container style={{ marginBottom: '20px',marginTop:"30px", padding: "30px" }}>
 			<Row>
 				{shows &&
-					shows?.map((show) => (
+					shows?.map((details) => (
 						<Col xs={12} md={6} lg={4} style={{ marginBottom: '20px', paddingBottom: "20px" ,columnGap:'0px'}}>
-							<SingleShow  key={show._id} show={show} />
+							<DetailsCard  key={details._id} details={details} />
 						</Col>
 					))}
 			</Row>
 		</Container>
-	);
+    );
 };
 
-export default AllShows;
+export default Details;

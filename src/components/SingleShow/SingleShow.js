@@ -24,9 +24,15 @@ const SingleShow = ({ show }) => {
 						</h6>
 					</div>
                   
+					{/* to={(`/details/${_id}`)} */}
+					
 					<Link to={(`/details/${_id}`)}>
-                    <Button variant="primary">Details</Button>
+                    <Button className="me-3" variant="primary">Details</Button>
                     </Link>
+					<Link to={(`/ticket-book/${_id}`)}>
+                    <Button variant="primary">Book</Button>
+                    </Link>
+					
 				</Card.Body>
 			</Card>
 		</>
