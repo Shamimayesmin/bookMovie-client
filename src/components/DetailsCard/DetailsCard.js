@@ -37,7 +37,7 @@ const DetailsCard = () => {
 							Ended:<Badge bg="secondary">{data.ended}</Badge>
 						</h6>
 					</div>
-                    {/* {(`/ticket-book`)} */}
+                   
 					<Link to={(`/ticket-book/${_id}`)}>
 						<Button variant="primary">Book</Button>
 					</Link>

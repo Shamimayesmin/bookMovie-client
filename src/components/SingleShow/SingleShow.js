@@ -29,9 +29,9 @@ const SingleShow = ({ show }) => {
 					<Link to={(`/details/${_id}`)}>
                     <Button className="me-3" variant="primary">Details</Button>
                     </Link>
-					<Link to={(`/ticket-book/${_id}`)}>
+					{/* <Link to={(`/ticket-book/${_id}`)}>
                     <Button variant="primary">Book</Button>
-                    </Link>
+                    </Link> */}
 					
 				</Card.Body>
 			</Card>
